@@ -5,6 +5,9 @@
   text-align: center;
   background-color: rgb(242, 141, 212);
 }
+.HomeView {
+  background-color: yellow;
+}
 
 /* .App-logo {
   height: 40vmin;
