@@ -1,6 +1,8 @@
 import React from "react";
 
-function LeveledMoves() {
+function LeveledMoves(props) {
+  let m = props.skateMoves;
+
   return (
     <div className="LeveledMoves">
       <h1>Stops</h1>
@@ -9,10 +11,11 @@ function LeveledMoves() {
 
       <h2>Levels:</h2>
       {/* cols are 100% of display width for 'xs', 50% width for 'sm', 33% width for 'md' and larger */}
+
       <div className="row text-center">
         <div className="col-sm-6 col-md-4">
           <h3>Beginner</h3>
-          <button>I am A button</button>
+          <button onClick={(m) => props.specMove(m.id)}>{m.level}</button>
         </div>
 
         <div className="col-sm-6 col-md-4">
@@ -26,7 +29,13 @@ function LeveledMoves() {
         </div>
       </div>
 
-      <div> </div>
+      <div>
+        <ul>
+          <li>
+            {m.name} {m.level} {m.category} {m.video}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

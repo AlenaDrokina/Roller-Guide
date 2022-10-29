@@ -7,9 +7,7 @@ function NavBar() {
     <nav className="Navbar">
       <ul>
         <li>
-          <NavLink to="/" done>
-            Home
-          </NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
           <NavLink to="/LeveledMoves">Moves</NavLink>

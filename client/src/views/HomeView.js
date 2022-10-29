@@ -1,5 +1,7 @@
 import React from "react";
 
+//function onClick() {
+
 function HomeView() {
   return (
     <div>
@@ -14,7 +16,6 @@ function HomeView() {
       </div>
       <h2>Some Simple Cards</h2>
       <div className="row mb-4">
-        {/* Put as many cards in a row as will fit */}
         <div className="col my-2">
           <div class="card">
             <img
@@ -36,7 +37,6 @@ function HomeView() {
             </div>
           </div>
         </div>
-
         <div className="col my-2">
           <div class="card">
             <img
@@ -59,7 +59,6 @@ function HomeView() {
             </div>
           </div>
         </div>
-
         <div className="col my-2">
           <div class="card">
             <img
