@@ -5,7 +5,13 @@ function HomeView() {
     <div>
       <h1 className="text/centre">Welcome!</h1>
       <h2>Select What you want to practice</h2>
-
+      <div class="top-girl">
+        <img
+          src="https://media.istockphoto.com/photos/side-profile-close-up-view-studio-photo-portrait-of-womans-legs-picture-id1034347568?k=20&m=1034347568&s=612x612&w=0&h=4jjxaDz0Ohknb_8iGQ2b8v8UgEKhCP4RlQ_MQk2y0CE="
+          class="img-fluid"
+          alt="Responsive image"
+        ></img>
+      </div>
       <h2>Some Simple Cards</h2>
       <div className="row mb-4">
         {/* Put as many cards in a row as will fit */}
@@ -21,7 +27,10 @@ function HomeView() {
               <p class="card-text">
                 Learn different ways to break depending on your level
               </p>
-              <a href="#" class="btn btn-primary">
+              <a
+                href="http://localhost:3000/LeveledMoves"
+                class="btn btn-primary"
+              >
                 Click here!
               </a>
             </div>
@@ -40,7 +49,11 @@ function HomeView() {
               <p class="card-text">
                 Learn different ways to Transition or turn.
               </p>
-              <a href="#" class="btn btn-primary">
+              <a
+                href="http://localhost:3000/LeveledMoves"
+                class="btn btn-primary"
+                role="button"
+              >
                 Click here!
               </a>
             </div>
@@ -59,7 +72,10 @@ function HomeView() {
               <p class="card-text">
                 Try out various jumps, from beginner to advanced!
               </p>
-              <a href="#" class="btn btn-primary">
+              <a
+                href="http://localhost:3000/LeveledMoves"
+                class="btn btn-primary"
+              >
                 Click
               </a>
             </div>

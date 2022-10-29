@@ -1,12 +1,21 @@
 .App {
   text-align: center;
-  width: 900px;
+  width: 1500px;
   margin: 0 auto;
   text-align: center;
-  background-color: rgb(242, 141, 212);
+  background-color: #f0e4d8;
+  font-family: "Josefin Sans";
 }
 .HomeView {
   background-color: yellow;
+}
+.LeveledMoves {
+  background-color: #ec3e5f;
+  text-align: left;
+}
+.TurnView {
+  background-color: #ec3e5f;
+  text-align: left;
 }
 
 /* .App-logo {

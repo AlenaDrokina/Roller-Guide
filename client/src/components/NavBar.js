@@ -7,7 +7,15 @@ function NavBar() {
     <nav className="Navbar">
       <ul>
         <li>
-          <NavLink to="/"> Home</NavLink>
+          <NavLink to="/" done>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/LeveledMoves">Moves</NavLink>
+        </li>
+        <li>
+          <NavLink to="/TurnView">Turns</NavLink>
         </li>
         <li>
           <NavLink to="/Video">Video</NavLink>

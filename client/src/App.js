@@ -1,10 +1,12 @@
-import logo from "./logo.svg";
 import React, { useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import VideoView from "./views/VideoView";
+import LeveledMoves from "./views/LeveledMoves";
+import TurnView from "./views/TurnView";
+import Footer from "./views/Footer";
 
 function App() {
   return (
@@ -12,25 +14,15 @@ function App() {
       <header className="App-header">
         <div>
           <h1>ROLLER-GUIDE</h1>
-          <NavBar />
-
+          <NavBar bg="dark" />
           <Routes>
             <Route path="/" element={<HomeView />} />
             <Route path="/Video" element={<VideoView />} />
+            <Route path="/LeveledMoves" element={<LeveledMoves />} />
+            <Route path="/TurnView" element={<TurnView />} />
           </Routes>
+          <Footer />
         </div>
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
       </header>
     </div>
   );
