@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  width: 1500px;
+  width: 1000px;
   margin: 0 auto;
   text-align: center;
   background-color: #f0e4d8;
@@ -13,6 +13,7 @@
   background-color: #ec3e5f;
   text-align: left;
 }
+
 .TurnView {
   background-color: #ec3e5f;
   text-align: left;

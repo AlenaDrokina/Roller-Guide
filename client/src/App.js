@@ -20,7 +20,7 @@ export default function App() {
       .then((response) => response.json())
       .then((skateMoves) => {
         setSkateMoves(skateMoves);
-        //  setSpecMove(skateMoves[0]);
+        setSpecMove(skateMoves[0]);
       })
       .catch((error) => {
         console.log(error);
