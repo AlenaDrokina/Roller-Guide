@@ -13,10 +13,16 @@
   background-color: #ec3e5f;
   text-align: left;
 }
+.LeveledMoves img {
+  border-radius: 50%;
+}
 
 .TurnView {
   background-color: #ec3e5f;
   text-align: left;
+}
+.TurnView img {
+  border-radius: 50%;
 }
 
 /* .App-logo {

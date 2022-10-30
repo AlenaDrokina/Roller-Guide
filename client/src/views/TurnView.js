@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
-function TurnView() {
+function TurnView(props) {
+  let move = props.move;
+  const path = move
+    ? `/Users/meganwalsh/Desktop/CodeOp_Activities/MVP/my-express-app/client/src/skateVidz/${move.video}`
+    : "";
+  const file = new File([path], path, { type: "video/mp4" });
+  const src = URL.createObjectURL(file);
   return (
     <div className="TurnView">
       <h1>Turns</h1>
@@ -12,18 +18,35 @@ function TurnView() {
       <div className="row text-center">
         <div className="col-sm-6 col-md-4">
           <h3>Beginner</h3>
-          <button>I am A button</button>
+          <button onClick={(e) => props.showSkateMove(4)}>Beginner</button>
         </div>
 
         <div className="col-sm-6 col-md-4">
           <h3>Intermediate</h3>
-          <button>I am A button</button>
+          <button onClick={(e) => props.showSkateMove(5)}>Intermediate</button>
         </div>
 
         <div className="col-sm-6 col-md-4">
           <h3>Advanced</h3>
-          <button>I am A button</button>
+          <button onClick={(e) => props.showSkateMove(6)}>Advanced</button>
         </div>
+      </div>
+      <div>
+        {move && (
+          <p>
+            {move.name} {move.description}
+          </p>
+        )}
+
+        {move && (
+          <video
+            src={src}
+            width="600"
+            height="300"
+            controls="controls"
+            autoPlay={true}
+          />
+        )}
       </div>
     </div>
   );

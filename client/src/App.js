@@ -20,7 +20,7 @@ export default function App() {
       .then((response) => response.json())
       .then((skateMoves) => {
         setSkateMoves(skateMoves);
-        setSpecMove(skateMoves[0]);
+        // setSpecMove(skateMoves[0]);
       })
       .catch((error) => {
         console.log(error);
@@ -50,10 +50,20 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomeView />} />
             <Route path="/Video" element={<VideoView />} />
-            <Route path="/LeveledMoves" element={<LeveledMoves />} />
-            <Route path="/TurnView" element={<TurnView />} />
+            <Route
+              path="/LeveledMoves"
+              element={
+                <LeveledMoves move={specMove} showSkateMove={showSkateMove} />
+              }
+            />
+            <Route
+              path="/TurnView"
+              element={
+                <TurnView move={specMove} showSkateMove={showSkateMove} />
+              }
+            />
           </Routes>
-          {specMove && <LeveledMoves move={specMove} />}
+
           <Footer />
         </div>
       </header>
