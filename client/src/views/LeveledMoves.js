@@ -14,29 +14,32 @@ function LeveledMoves(props) {
         className="Megan"
         src="https://media-exp1.licdn.com/dms/image/C4D03AQHqlxnSUCH8sA/profile-displayphoto-shrink_200_200/0/1648118375869?e=1669852800&v=beta&t=OwyftTjxFsaucnNiPmY_AAcHQ4mbT4KNj_1ApW3HtyI"
       ></img>
-
-      <h2>Levels:</h2>
+      <hr></hr>
+      <br></br>
+      <h3 className="levels">Levels:</h3>
+      <br></br>
       {/* cols are 100% of display width for 'xs', 50% width for 'sm', 33% width for 'md' and larger */}
-
       <div className="row text-center">
         <div className="col-sm-6 col-md-4">
-          <h3>Beginner</h3>
+          <h3>Beginner</h3> <br></br>
           {/* <button onClick={(m) => props.specMove(m.id)}>{m.level}</button> */}
-          <button onClick={(e) => props.showSkateMove(1)}>Beginner</button>
+          <button onClick={(e) => props.showSkateMove(1)}>Click Here</button>
         </div>
 
         <div className="col-sm-6 col-md-4">
           <h3>Intermediate</h3>
-          <button onClick={(e) => props.showSkateMove(2)}>Intermediate</button>
+          <br></br>
+          <button onClick={(e) => props.showSkateMove(2)}>Click Here</button>
         </div>
 
         <div className="col-sm-6 col-md-4">
           <h3>Advanced</h3>
+          <br></br>
           {/* <button>I am A button</button> */}
-          <button onClick={(e) => props.showSkateMove(3)}>Advanced</button>
+          <button onClick={(e) => props.showSkateMove(3)}>Click Here</button>
         </div>
       </div>
-
+      <hr></hr>
       <div className="data">
         {move && (
           <h4>
@@ -44,6 +47,7 @@ function LeveledMoves(props) {
             {move.name}
             <br></br>
             <br></br>
+            <hr></hr>
             {move.description}
           </h4>
         )}

@@ -3,27 +3,40 @@
 }
 
 .LeveledMoves img {
+  margin: 30px;
   border-radius: 50%;
+  border: 5px solid #ec3e5f;
 }
 h1 {
   color: #ef6da7;
 }
+h2 {
+  font-family: sans-serif;
+  color: black;
+}
 h3 {
   font-family: "Citation Reports", sans-serif;
-  color: #f6c1d4;
+  color: #f09036;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.levels {
+  font-family: "Citation Reports", sans-serif;
+  color: #ec3e5f;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .data {
   margin: 50px;
-  color: #f09036;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: black;
   font-family: sans-serif;
   text-align: center;
 }
 
 button {
   color: #ec3e5f;
-  background-color: #f0e4d8;
+  background-color: #f6c1d4;
+  border-radius: 50%;
+  padding: 32px 16px;
 }
 video {
   display: block;

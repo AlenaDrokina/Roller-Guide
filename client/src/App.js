@@ -3,7 +3,6 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
 import HomeView from "./views/HomeView";
-
 import LeveledMoves from "./views/LeveledMoves";
 import TurnView from "./views/TurnView";
 import Footer from "./views/Footer";
@@ -20,7 +19,6 @@ export default function App() {
       .then((response) => response.json())
       .then((skateMoves) => {
         setSkateMoves(skateMoves);
-        // setSpecMove(skateMoves[0]);
       })
       .catch((error) => {
         console.log(error);
@@ -45,8 +43,7 @@ export default function App() {
     <div className="App">
       <h1>ROLLER-GUIDE</h1>{" "}
       <div>
-        <header className="App-header"></header>
-
+        {/* <header className="App-header"></header> */}
         <NavBar bg="dark" />
         <Routes>
           <Route path="/" element={<HomeView />} />
