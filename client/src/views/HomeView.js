@@ -1,12 +1,10 @@
 import React from "react";
 
-//function onClick() {
-
 function HomeView() {
   return (
     <div>
       <h1 className="text/centre">Welcome!</h1>
-      <h2>Select What you want to practice</h2>
+
       <div class="top-girl">
         <img
           src="https://media.istockphoto.com/photos/side-profile-close-up-view-studio-photo-portrait-of-womans-legs-picture-id1034347568?k=20&m=1034347568&s=612x612&w=0&h=4jjxaDz0Ohknb_8iGQ2b8v8UgEKhCP4RlQ_MQk2y0CE="
@@ -14,7 +12,7 @@ function HomeView() {
           alt="Responsive image"
         ></img>
       </div>
-      <h2>Some Simple Cards</h2>
+      <h2 className="Select"> Select What you want to practice</h2>
       <div className="row mb-4">
         <div className="col my-2">
           <div class="card">
@@ -47,7 +45,7 @@ function HomeView() {
             <div class="card-body">
               <h5 class="card-title">Transitions</h5>
               <p class="card-text">
-                Learn different ways to Transition or turn.
+                Learn different ways to Transition or turn here.
               </p>
               <a
                 href="http://localhost:3000/LeveledMoves"

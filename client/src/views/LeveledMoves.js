@@ -3,13 +3,8 @@ import React, { useState } from "react";
 function LeveledMoves(props) {
   //let m = props.skateMoves;
   let move = props.move;
-  const path = move
-    ? `/Users/meganwalsh/Desktop/CodeOp_Activities/MVP/my-express-app/client/src/skateVidz/${move.video}`
-    : "";
-  const file = new File([path], path, { type: "video/mp4" });
-  const src = URL.createObjectURL(file);
-  //import banana from `/Users/meganwalsh/Desktop/CodeOp_Activities/MVP/my-express-app/client/src/skateVidz/${move.video}`
-  console.log(src);
+  const path = move ? `http://localhost:5000/skateVidz/${move.video}` : "";
+
   return (
     <div className="LeveledMoves">
       <h1>Stops</h1>
@@ -49,7 +44,7 @@ function LeveledMoves(props) {
 
         {move && (
           <video
-            src={src}
+            src={path}
             width="600"
             height="300"
             controls="controls"

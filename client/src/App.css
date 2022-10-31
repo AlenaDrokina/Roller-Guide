@@ -4,11 +4,16 @@
   margin: 0 auto;
   text-align: center;
   background-color: #f0e4d8;
-  font-family: "Josefin Sans";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #edb682;
 }
-.HomeView {
-  background-color: yellow;
+h1 {
+  font-family: "Citation Reports", sans-serif;
 }
+.Select {
+  font-family: "Citation Reports", sans-serif;
+}
+
 .LeveledMoves {
   background-color: #ec3e5f;
   text-align: left;
@@ -23,6 +28,10 @@
 }
 .TurnView img {
   border-radius: 50%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
 /* .App-logo {

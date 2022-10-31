@@ -2,11 +2,8 @@ import React, { useState } from "react";
 
 function TurnView(props) {
   let move = props.move;
-  const path = move
-    ? `/Users/meganwalsh/Desktop/CodeOp_Activities/MVP/my-express-app/client/src/skateVidz/${move.video}`
-    : "";
-  const file = new File([path], path, { type: "video/mp4" });
-  const src = URL.createObjectURL(file);
+  const path = move ? `http://localhost:5000/skateVidz/${move.video}` : "";
+
   return (
     <div className="TurnView">
       <h1>Turns</h1>
@@ -40,7 +37,7 @@ function TurnView(props) {
 
         {move && (
           <video
-            src={src}
+            src={path}
             width="600"
             height="300"
             controls="controls"
