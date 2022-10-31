@@ -3,7 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
 import HomeView from "./views/HomeView";
-import VideoView from "./views/VideoView";
+
 import LeveledMoves from "./views/LeveledMoves";
 import TurnView from "./views/TurnView";
 import Footer from "./views/Footer";
@@ -43,30 +43,28 @@ export default function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div>
-          <h1>ROLLER-GUIDE</h1>
-          <NavBar bg="dark" />
-          <Routes>
-            <Route path="/" element={<HomeView />} />
-            <Route path="/Video" element={<VideoView />} />
-            <Route
-              path="/LeveledMoves"
-              element={
-                <LeveledMoves move={specMove} showSkateMove={showSkateMove} />
-              }
-            />
-            <Route
-              path="/TurnView"
-              element={
-                <TurnView move={specMove} showSkateMove={showSkateMove} />
-              }
-            />
-          </Routes>
+      <h1>ROLLER-GUIDE</h1>{" "}
+      <div>
+        <header className="App-header"></header>
 
-          <Footer />
-        </div>
-      </header>
+        <NavBar bg="dark" />
+        <Routes>
+          <Route path="/" element={<HomeView />} />
+
+          <Route
+            path="/LeveledMoves"
+            element={
+              <LeveledMoves move={specMove} showSkateMove={showSkateMove} />
+            }
+          />
+          <Route
+            path="/TurnView"
+            element={<TurnView move={specMove} showSkateMove={showSkateMove} />}
+          />
+        </Routes>
+
+        <Footer />
+      </div>
     </div>
   );
 }

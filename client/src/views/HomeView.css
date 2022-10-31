@@ -1,5 +1,5 @@
 .card {
-  margin: 0 auto;
+  margin: 20px;
   width: 18 rem;
 }
 .card img {
@@ -8,6 +8,7 @@
   object-fit: cover;
 }
 .img-fluid {
+  border-radius: 10px;
   max-width: 100%;
   height: auto;
 }

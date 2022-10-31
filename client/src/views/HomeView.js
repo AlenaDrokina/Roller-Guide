@@ -1,4 +1,5 @@
 import React from "react";
+import "./HomeView.css";
 
 function HomeView() {
   return (
@@ -28,7 +29,7 @@ function HomeView() {
               </p>
               <a
                 href="http://localhost:3000/LeveledMoves"
-                class="btn btn-primary"
+                class="btn btn-outline-primary"
               >
                 Click here!
               </a>
@@ -48,8 +49,8 @@ function HomeView() {
                 Learn different ways to Transition or turn here.
               </p>
               <a
-                href="http://localhost:3000/LeveledMoves"
-                class="btn btn-primary"
+                href="http://localhost:3000/TurnView"
+                class="btn btn-outline-primary"
                 role="button"
               >
                 Click here!
@@ -71,9 +72,9 @@ function HomeView() {
               </p>
               <a
                 href="http://localhost:3000/LeveledMoves"
-                class="btn btn-primary"
+                class="btn btn-outline-primary"
               >
-                Click
+                Click here!
               </a>
             </div>
           </div>

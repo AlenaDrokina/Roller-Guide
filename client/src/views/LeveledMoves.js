@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./LeveledMoves.css";
 
 function LeveledMoves(props) {
   //let m = props.skateMoves;
@@ -8,7 +9,7 @@ function LeveledMoves(props) {
   return (
     <div className="LeveledMoves">
       <h1>Stops</h1>
-      <h2>Today you will learn with Megan!</h2>
+      <h2>Today you will learn with ... Megan!</h2>
       <img
         className="Megan"
         src="https://media-exp1.licdn.com/dms/image/C4D03AQHqlxnSUCH8sA/profile-displayphoto-shrink_200_200/0/1648118375869?e=1669852800&v=beta&t=OwyftTjxFsaucnNiPmY_AAcHQ4mbT4KNj_1ApW3HtyI"
@@ -35,18 +36,23 @@ function LeveledMoves(props) {
           <button onClick={(e) => props.showSkateMove(3)}>Advanced</button>
         </div>
       </div>
-      <div>
+
+      <div className="data">
         {move && (
-          <p>
-            {move.name} {move.description}
-          </p>
+          <h4>
+            {" "}
+            {move.name}
+            <br></br>
+            <br></br>
+            {move.description}
+          </h4>
         )}
 
         {move && (
           <video
             src={path}
-            width="600"
-            height="300"
+            width="800"
+            height="500"
             controls="controls"
             autoPlay={true}
           />

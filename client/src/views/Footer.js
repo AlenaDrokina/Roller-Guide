@@ -3,7 +3,11 @@ import React from "react";
 function Footer() {
   return (
     <div className="Footer">
-      <h1>Footer</h1>
+      <p>
+        {" "}
+        Credits: A special thank you to noted fashion photographers Alena
+        Drokina and Zoe Laventhol. 👏
+      </p>
     </div>
   );
 }

@@ -1,0 +1,31 @@
+.LeveledMoves {
+  text-align: center;
+}
+
+.LeveledMoves img {
+  border-radius: 50%;
+}
+h1 {
+  color: #ef6da7;
+}
+h3 {
+  font-family: "Citation Reports", sans-serif;
+  color: #f6c1d4;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.data {
+  margin: 50px;
+  color: #f09036;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+button {
+  color: #ec3e5f;
+  background-color: #f0e4d8;
+}
+video {
+  display: block;
+  margin: auto;
+}

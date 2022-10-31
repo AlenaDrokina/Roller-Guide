@@ -10,13 +10,10 @@ function NavBar() {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/LeveledMoves">Moves</NavLink>
+          <NavLink to="/LeveledMoves">Stops</NavLink>
         </li>
         <li>
           <NavLink to="/TurnView">Turns</NavLink>
-        </li>
-        <li>
-          <NavLink to="/Video">Video</NavLink>
         </li>
       </ul>
     </nav>
