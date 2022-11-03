@@ -26,13 +26,6 @@ h1 {
   font-family: "Citation Reports", sans-serif;
 }
 
-.TurnView {
-  background-color: #ec3e5f;
-  text-align: left;
-}
-.TurnView img {
-  border-radius: 50%;
-}
 .dropdown {
   position: relative;
   display: inline-block;

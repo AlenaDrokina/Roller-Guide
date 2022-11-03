@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./LeveledMoves.css";
 
 function LeveledMoves(props) {
-  //let m = props.skateMoves;
   let move = props.move;
   const path = move ? `http://localhost:5000/skateVidz/${move.video}` : "";
 
@@ -43,8 +42,7 @@ function LeveledMoves(props) {
       <div className="data">
         {move && (
           <h4>
-            {" "}
-            {move.name}
+            {move.level} {move.name}
             <br></br>
             <br></br>
             <hr></hr>

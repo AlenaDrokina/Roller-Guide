@@ -1,8 +1,7 @@
-.LeveledMoves {
+.TurnView {
   text-align: center;
 }
-
-.LeveledMoves img {
+.TurnView img {
   margin: 30px;
   border-radius: 50%;
   border: 5px solid #ec3e5f;

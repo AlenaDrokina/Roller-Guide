@@ -44,7 +44,8 @@ export default function App() {
       <h1>ROLLER-GUIDE</h1>{" "}
       <div>
         {/* <header className="App-header"></header> */}
-        <NavBar bg="dark" />
+
+        <NavBar />
         <Routes>
           <Route path="/" element={<HomeView />} />
 

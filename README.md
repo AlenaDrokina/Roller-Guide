@@ -1,13 +1,32 @@
-DROP TABLE IF EXISTS skateMoves;
+### Dependencies
 
+- Run `npm install` in project directory. This will install server-related dependencies such as `express`.
+- `cd client` and run `npm install`. This will install client dependencies (React).
+
+### Database Prep
+
+- Access the MySQL interface in your terminal by running `mysql -u root -p`
+- Create a new database called facebook: `moves`
+- Add a `.env` file to the project folder of this repository containing the MySQL authentication information for MySQL user. For example:
+
+```bash
+  DB_HOST=localhost
+  DB_USER=root
+  DB_NAME=moves
+  DB_PASS=root
+```
+
+- Run `npm run migrate` in the project folder of this repository, in a new terminal window. This will create a table called 'skateMoves' in your database.
+
+-In your MySQL console, you can run `use moves;` and then `describe skateMoves;` to see the structure of the table.
 
 CREATE TABLE skateMoves(
-    id INT NOT NULL PRIMARY KEY,
-    level VARCHAR(255),
-    name VARCHAR(255),
-    video VARCHAR(255),
-    category VARCHAR(255),
-    description VARCHAR(500)
+id INT NOT NULL PRIMARY KEY,
+level VARCHAR(255),
+name VARCHAR(255),
+video VARCHAR(255),
+category VARCHAR(255),
+description VARCHAR(500)
 );
 
 INSERT INTO skateMoves (id, level, name, video, category, description)
@@ -18,16 +37,9 @@ VALUES (1, "Beginner", "PloughStop","vTransition.mp4", "stops", "Plow/plough sto
 (5, "Intermediate", "PivotTransition", "pivotTransition.mp4", "transitions", "Now this one can be a little bit scary if you're going at speed to transition. Take it slow and steady!"),
 (6, "Advanced", "ManualTransition", "manuelTransition.mp4", "transitions", "staggering the feet is the most important step,The trick is to look forward while coming into the jump, and keep looking the same way after you jump, No need to turn your head.");
 
--- CREATE TABLE cats(
---     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
---     name VARCHAR(100),
---     video VARCHAR(100),
---     category VARCHAR(100)
--- );
--- INSERT INTO cats (id,  name, video, category)
--- VALUES (1, "beginner", "ploughStop","vTransition.mp4", "stops"),
--- (2, "intermediate", "tStop","tStop.mp4", "stops"),
--- (3, "advanced", "toeStop", "toeStop.mp4", "stops"),
--- (4, "beginner", "vTransition", "vTransition.mp4", "transitions"),
--- (5, "intermediate", "pivotTransition", "pivotTransition.mp4", "transitions"),
--- (6, "advanced", "manuelTransition", "manuelTransition.mp4", "transitions");
+### Development
+
+- Run `npm start` in project directory to start the Express server on port 5000
+- In another terminal, do `cd client` and run `npm start` to start the client in development mode with hot reloading in port 5000.
+
+_This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
