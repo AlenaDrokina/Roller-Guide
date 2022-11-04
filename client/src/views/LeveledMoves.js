@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import "./LeveledMoves.css";
 
 function LeveledMoves(props) {
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
+
   let move = props.move;
   const path = move ? `http://localhost:5000/skateVidz/${move.video}` : "";
 
+  const onChange = (e) => {
+    setComment(e.target.value);
+  };
+  const onClickHandler = () => {
+    setComments((comments) => [...comments, comment]);
+  };
   return (
     <div className="LeveledMoves">
       <h1>Stops</h1>
@@ -22,20 +31,26 @@ function LeveledMoves(props) {
         <div className="col-sm-6 col-md-4">
           <h3>Beginner</h3> <br></br>
           {/* <button onClick={(m) => props.specMove(m.id)}>{m.level}</button> */}
-          <button onClick={(e) => props.showSkateMove(1)}>Click Here</button>
+          <button className="button" onClick={(e) => props.showSkateMove(1)}>
+            Click Here
+          </button>
         </div>
 
         <div className="col-sm-6 col-md-4">
           <h3>Intermediate</h3>
           <br></br>
-          <button onClick={(e) => props.showSkateMove(2)}>Click Here</button>
+          <button className="button" onClick={(e) => props.showSkateMove(2)}>
+            Click Here
+          </button>
         </div>
 
         <div className="col-sm-6 col-md-4">
           <h3>Advanced</h3>
           <br></br>
           {/* <button>I am A button</button> */}
-          <button onClick={(e) => props.showSkateMove(3)}>Click Here</button>
+          <button className="button" onClick={(e) => props.showSkateMove(3)}>
+            Click Here
+          </button>
         </div>
       </div>
       <hr></hr>
@@ -58,6 +73,25 @@ function LeveledMoves(props) {
             controls="controls"
             autoPlay={true}
           />
+        )}
+        {move && (
+          <div className="main-container">
+            <h3 className="comment-text">Comment</h3>
+            <textarea
+              value={comment}
+              onChange={onChange}
+              className="input-box"
+              placeholder="Leave a comment here!"
+            />
+            <button onClick={onClickHandler} className="comment-button">
+              Submit
+            </button>
+            {comments.map((text) => (
+              <div key={text.id}>
+                <div className="comment-container">{text}</div>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>

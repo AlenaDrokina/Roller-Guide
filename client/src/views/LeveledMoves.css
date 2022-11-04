@@ -32,7 +32,7 @@ h3 {
   text-align: center;
 }
 
-button {
+.button {
   color: #ec3e5f;
   background-color: #f6c1d4;
   border-radius: 50%;
@@ -41,4 +41,36 @@ button {
 video {
   display: block;
   margin: auto;
+}
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -230px;
+}
+
+.comment-text {
+  margin: 12px 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.input-box {
+  height: 74px;
+  width: 454px;
+  background-color: #ffffff;
+}
+.comment-container {
+  height: 74px;
+  width: 454px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  margin: 2px;
+}
+.comment-button {
+  margin-top: 10px;
+  /* border-radius: 20%;
+  height: 30px;
+  width: 100px; */
 }

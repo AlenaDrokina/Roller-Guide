@@ -15,6 +15,15 @@ function NavBar() {
         <li>
           <NavLink to="/TurnView">Turns</NavLink>
         </li>
+        <li>
+          <NavLink to="/FavMoves">FavMoves</NavLink>
+        </li>
+        <li>
+          <NavLink to="/TheMap">Map</NavLink>
+        </li>
+        <li>
+          <NavLink to="/login">Login</NavLink>
+        </li>
       </ul>
     </nav>
   );
