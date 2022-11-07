@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
-// import Naver from "./components/Naver";
 
 import Local from "./helpers/Local";
 import Api from "./helpers/Api";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
+import MembersOnly from "./views/MembersOnly";
 
+import PrivateRoute from "./components/PrivateRoute";
 import HomeView from "./views/HomeView";
 import LeveledMoves from "./views/LeveledMoves";
 import TurnView from "./views/TurnView";
 import Footer from "./views/Footer";
 import FavMoves from "./views/FavMoves";
 import TheMap from "./views/TheMap";
+import Profile from "./views/Profile";
 
 import Login from "./views/Login";
 // import Signup from "./views/Signup";
@@ -21,6 +23,7 @@ import Login from "./views/Login";
 export default function App() {
   const [skateMoves, setSkateMoves] = useState([]);
   const [specMove, setSpecMove] = useState(null);
+
   const [user, setUser] = useState(Local.getUser());
   const [loginErrorMsg, setLoginErrorMsg] = useState("");
   const navigate = useNavigate();
@@ -71,22 +74,62 @@ export default function App() {
     }
   }
 
+  function doLogout() {
+    Local.removeUserInfo();
+    setUser(null);
+    // (NavBar will send user to home page)
+  }
+
   return (
     <div className="App">
-      {/* <Naver /> */}
       <h1>ROLLER-GUIDE</h1>{" "}
       <div>
-        {/* <header className="App-header"></header> */}
-
         <NavBar user={user} logoutCb={doLogout} />
+
         <Routes>
+          <Route path="/" element={<HomeView />} />
+          <Route
+            path="/users/:userId"
+            element={
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/TurnView"
+            element={
+              <PrivateRoute>
+                <TurnView />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/LeveledMoves"
+            element={
+              <PrivateRoute>
+                <LeveledMoves />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/TheMap"
+            element={
+              <PrivateRoute>
+                <TheMap />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="/login"
-            element={<Login loginCb={(u, p) => doLogin(u, p)} />}
+            element={
+              <Login
+                loginCb={(u, p) => doLogin(u, p)}
+                loginError={loginErrorMsg}
+              />
+            }
           />
-          {/* <Route path="/Register" element={<Signup />} /> */}
-          <Route path="/" element={<HomeView />} />
-
           <Route
             path="/LeveledMoves"
             element={

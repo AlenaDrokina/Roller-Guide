@@ -7,6 +7,7 @@ const cors = require("cors");
 var authRouter = require("./routes/auth");
 var indexRouter = require("./routes/index");
 var skateMovesRouter = require("./routes/skateMoves");
+var usersRouter = require("./routes/users");
 
 var app = express();
 app.use(cors());
@@ -17,12 +18,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", authRouter);
+app.use("/users", usersRouter);
+
 app.use("/", indexRouter);
 app.use("/skateMoves", skateMovesRouter);
 
-app.use(function (req, res, next) {
-  next(createError(404));
-});
+// app.use(function (req, res, next) {
+//   next(createError(404));
+// });
 
 // General error handler
 app.use(function (err, req, res, next) {

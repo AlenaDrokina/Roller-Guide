@@ -1,40 +1,65 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+// import { useMap } from "react-leaflet/hooks";
+import "leaflet/dist/leaflet.css";
+// import L from "leaflet";
+import { LatLngExpression } from "leaflet";
+import "./TheMap.css";
 
-const barcelona = [41.390205, 2.154007];
+const barcelona = [41.37861515964027, 2.1798093354905523];
+
+// delete L.Icon.Default.prototype._getIconUrl;
+
+// L.Icon.Default.mergeOptions({
+//   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+//   iconUrl: require("leaflet/dist/images/marker-icon.png"),
+//   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+// });
 
 const TheMap = () => {
-  // const [loading, setLoading] = useState(true);
-  // const [listing, setListing] = useState(null);
+  function addMarker(e) {
+    const { markers } = this.state;
+    markers.push(e.latlng);
+    this.setState({ markers });
+  }
 
   return (
-    <div className="leafContainer">
-      <h1>Map</h1>
-      {/* <MapContainer
-        style={{ height: "100%", width: "100%" }}
-        center={[listing.geolocation.lat, listing.geolocation.lng]}
-        zoom={4}
-        scrollWheelZoom={false}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker
-          position={[listing.geolocation.lat, listing.geolocation.lng]}
-        ></Marker>
-      </MapContainer> */}
-      <MapContainer
-        center={[51.505, -0.09]}
-        zoom={13}
-        scrollWheelZoom={false}
-        placeholder={<MapPlaceholder />}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-      </MapContainer>
+    <div classNAme="theMap">
+      <div classNAme="Map">
+        <h1>hey</h1>
+        <div className="aMap">
+          {/* <h1>Map</h1> */}
+          <MapContainer
+            center={barcelona}
+            zoom={13}
+            style={{ height: "500px", width: "500px" }}
+            scrollWheelZoom={false}
+            // maxZoom={10}
+            attributionControl={true}
+            zoomControl={true}
+            doubleClickZoom={true}
+            dragging={true}
+            animate={true}
+            easeLinearity={0.35}
+            onClick={addMarker}
+          >
+            <TileLayer
+              url="https://api.maptiler.com/maps/outdoor/256/{z}/{x}/{y}.png?key=URvOXOC4Hq2CcuVFdBy4"
+              attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+            />
+            <Marker position={[41.39100113779489, 2.1806165884852824]}>
+              <Popup>Arc de Triomf</Popup>
+            </Marker>
+          </MapContainer>
+        </div>
+
+        <div className="adder">
+          <label>
+            Add a place to skate
+            <input></input>
+          </label>
+        </div>
+      </div>
     </div>
   );
 };

@@ -46,3 +46,16 @@ VALUES
     ('user1','$2b$12$eFzMWbS9SogNtxkmo3J7aO8FQMFQSKbtpwLMIOVsF6GGKpTQdgq.W','user1@acme.com'),
     ('user2','$2b$12$WZcGPyrkCvD5e8m0Qz/nFOdBryUcsp6uDlE2MDo/AjuBhPrQBCfI6','user2@acme.com'),
     ('user3','$2b$12$tiAz4eaXlpU.CdltUVvw6udLA2BWsitk5zXM2XOm2IpAeAiFfMCdy','user3@acme.com');
+
+
+DROP TABLE IF EXISTS data;
+CREATE TABLE data (
+    id INT 
+    name VARCHAR(50), 
+    latitude DECIMAL(10),
+    longitude DECIMAL(10)
+
+);
+INSERT INTO `data` (name, latitude, longitude)
+VALUES ('Arc de Triomf','41.3910011377','2.1806165884852824');
+    
