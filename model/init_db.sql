@@ -1,6 +1,4 @@
 DROP TABLE IF EXISTS skateMoves;
-
-
 CREATE TABLE skateMoves(
     id INT NOT NULL PRIMARY KEY,
     level VARCHAR(255),
@@ -50,10 +48,10 @@ VALUES
 
 DROP TABLE IF EXISTS data;
 CREATE TABLE data (
-    id INT 
-    name VARCHAR(50), 
-    latitude DECIMAL(10),
-    longitude DECIMAL(10)
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(144), 
+    latitude DECIMAL(65,30),
+    longitude DECIMAL(65,30)
 
 );
 INSERT INTO `data` (name, latitude, longitude)

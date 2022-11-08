@@ -1,0 +1,9 @@
+.MarkerMap {
+  display: grid;
+  margin-right: 25px;
+  border-radius: 25px;
+}
+.buttonMarker button {
+  border-radius: 2%;
+  background-color: aliceblue;
+}

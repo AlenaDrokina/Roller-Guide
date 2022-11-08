@@ -74,25 +74,6 @@ function LeveledMoves(props) {
             autoPlay={true}
           />
         )}
-        {move && (
-          <div className="main-container">
-            <h3 className="comment-text">Comment</h3>
-            <textarea
-              value={comment}
-              onChange={onChange}
-              className="input-box"
-              placeholder="Leave a comment here!"
-            />
-            <button onClick={onClickHandler} className="comment-button">
-              Submit
-            </button>
-            {comments.map((text) => (
-              <div key={text.id}>
-                <div className="comment-container">{text}</div>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );

@@ -19,17 +19,23 @@ function TurnView(props) {
       <div className="row text-center">
         <div className="col-sm-6 col-md-4">
           <h3>Beginner</h3>
-          <button onClick={(e) => props.showSkateMove(4)}>Click Here</button>
+          <button className="button" onClick={(e) => props.showSkateMove(4)}>
+            Click Here
+          </button>
         </div>
 
         <div className="col-sm-6 col-md-4">
           <h3>Intermediate</h3>
-          <button onClick={(e) => props.showSkateMove(5)}>Click Here</button>
+          <button className="button" onClick={(e) => props.showSkateMove(5)}>
+            Click Here
+          </button>
         </div>
 
         <div className="col-sm-6 col-md-4">
           <h3>Advanced</h3>
-          <button onClick={(e) => props.showSkateMove(6)}>Click Here</button>
+          <button className="button" onClick={(e) => props.showSkateMove(6)}>
+            Click Here
+          </button>
         </div>
       </div>
       <hr></hr>

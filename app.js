@@ -8,6 +8,7 @@ var authRouter = require("./routes/auth");
 var indexRouter = require("./routes/index");
 var skateMovesRouter = require("./routes/skateMoves");
 var usersRouter = require("./routes/users");
+var mapDataRouter = require("./routes/mapData");
 
 var app = express();
 app.use(cors());
@@ -19,7 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", authRouter);
 app.use("/users", usersRouter);
-
+app.use("/TheMap", mapDataRouter);
 app.use("/", indexRouter);
 app.use("/skateMoves", skateMovesRouter);
 

@@ -2,9 +2,7 @@
   display: flex;
   align-items: center;
 } */
-.Map {
-  display: grid;
-}
+
 .aMap {
   display: grid;
   width: 500px;

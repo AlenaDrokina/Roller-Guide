@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./Login.css";
 function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -61,7 +61,13 @@ function Login(props) {
             </label>
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button
+            type="submit"
+            className="btn btn-danger"
+            data-toggle="button"
+            aria-pressed="false"
+            autocomplete="off"
+          >
             Submit
           </button>
         </form>

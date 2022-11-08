@@ -1,0 +1,9 @@
+.MarkerTable-table {
+  text-align: left;
+  margin-left: 10px;
+  /* margin-left: 50px;
+  border-color: black; */
+}
+th {
+  text-align: center;
+}

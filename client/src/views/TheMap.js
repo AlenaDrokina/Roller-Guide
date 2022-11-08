@@ -1,65 +1,119 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 // import { useMap } from "react-leaflet/hooks";
 import "leaflet/dist/leaflet.css";
 // import L from "leaflet";
-import { LatLngExpression } from "leaflet";
+// import { LatLngExpression } from "leaflet";
 import "./TheMap.css";
+import AddressForm from "../components/AddressForm";
+// import MarkerTable from "../components/MarkerTable";
+import MarkerMap from "../components/MarkerMap";
+import { geocode } from "../helpers/geo-opencage";
 
 const barcelona = [41.37861515964027, 2.1798093354905523];
 
-// delete L.Icon.Default.prototype._getIconUrl;
+const TheMap = (props) => {
+  const [places, setPlaces] = useState([]);
+  // let deleteMarker = props.deleteMarker;
 
-// L.Icon.Default.mergeOptions({
-//   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-//   iconUrl: require("leaflet/dist/images/marker-icon.png"),
-//   shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-// });
+  useEffect(() => {
+    fetch("/TheMap")
+      .then((res) => res.json())
+      .then((json) => {
+        setPlaces(json);
+      })
+      .catch((error) => {});
+  }, []);
 
-const TheMap = () => {
-  function addMarker(e) {
-    const { markers } = this.state;
-    markers.push(e.latlng);
-    this.setState({ markers });
+  async function addMarkerForAddress(addr) {
+    let myresponse = await geocode(addr);
+    console.log(myresponse);
+    if (myresponse.ok) {
+      if (myresponse.data.latLng) {
+        // Create new 'place' obj
+        let d = myresponse.data;
+        let newPlace = {
+          name: addr,
+          latitude: d.latLng[0],
+          longitude: d.latLng[1],
+
+          // formatted_address: d.formatted_address,
+        };
+        // Add it to 'places' state
+        // setPlaces((places) => [...places, newPlace]);
+        await addMarker(newPlace);
+        console.log(places);
+      } else {
+        console.log("addMarkerForAddress(): no results found");
+      }
+    } else {
+      console.log("addMarkerForAddress(): response.error:", myresponse.error);
+    }
+  }
+
+  async function addMarker(place) {
+    try {
+      let response = await fetch("/TheMap", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }, //in what form we send to server
+        body: JSON.stringify(place), // updated input
+      });
+
+      if (response.ok) {
+        let data = await response.json();
+        setPlaces(data);
+      } else {
+        console.log(`Server error: ${response.status} ${response.statusText}`);
+      }
+    } catch (err) {
+      console.log(`Network error: ${err.message}`);
+    }
+  }
+
+  async function deleteMarker(id) {
+    let options = {
+      method: "DELETE",
+    };
+    try {
+      let response = await fetch(`/TheMap/${id}`, options);
+
+      if (response.ok) {
+        let data = await response.json();
+        setPlaces(data);
+      } else {
+        console.log(`Server error: ${response.status} ${response.statusText}`);
+      }
+    } catch (err) {
+      console.log(`Network error: ${err.message}`);
+    }
   }
 
   return (
     <div classNAme="theMap">
-      <div classNAme="Map">
-        <h1>hey</h1>
-        <div className="aMap">
-          {/* <h1>Map</h1> */}
-          <MapContainer
-            center={barcelona}
-            zoom={13}
-            style={{ height: "500px", width: "500px" }}
-            scrollWheelZoom={false}
-            // maxZoom={10}
-            attributionControl={true}
-            zoomControl={true}
-            doubleClickZoom={true}
-            dragging={true}
-            animate={true}
-            easeLinearity={0.35}
-            onClick={addMarker}
-          >
-            <TileLayer
-              url="https://api.maptiler.com/maps/outdoor/256/{z}/{x}/{y}.png?key=URvOXOC4Hq2CcuVFdBy4"
-              attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
-            />
-            <Marker position={[41.39100113779489, 2.1806165884852824]}>
-              <Popup>Arc de Triomf</Popup>
-            </Marker>
-          </MapContainer>
+      <div className="row mb-5">
+        <div className="col">
+          <h3 className="mt-4">Add Markers Where {<br />} you like to skate</h3>
+          <h5>Enter an address to add a marker on the map</h5>
+          <AddressForm
+            addMarkerCb={(addr) => addMarkerForAddress(addr)}
+            places={places}
+          />
         </div>
 
-        <div className="adder">
-          <label>
-            Add a place to skate
-            <input></input>
-          </label>
+        <div className="col">
+          {props.home && (
+            <MarkerMap
+              places={places}
+              home={props.home}
+              zoom={13}
+              deleteMarker={(id) => deleteMarker(id)}
+            />
+          )}
         </div>
       </div>
+      {/* <div className="mapEr">
+        <MarkerTable places={places} />
+      </div> */}
     </div>
   );
 };

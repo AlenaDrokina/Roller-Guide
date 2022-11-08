@@ -1,0 +1,28 @@
+.submit {
+  column-span: 1/ 2 span;
+}
+/* input {
+  margin-left: 20px;
+  margin-right: auto;
+} */
+
+.AddressForm {
+  display: grid;
+  margin-left: 20px;
+}
+.btn btn-danger {
+  margin: 5;
+  /* position: absolute; */
+  /* top: 71%;
+  left: 21%; */
+  /* -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+}
+.mapEr {
+  margin-top: 50px;
+  margin-left: 180px;
+  /* border-color: black; */
+  border: 2px solid black;
+  margin-right: 180px;
+  border-radius: 10px;
+}
